@@ -1,0 +1,30 @@
+/* Direccion visual "Clean Slate" — Glass Collision (segunda ubicacion, misma
+   operacion que DC Glass Collision, marca deliberadamente distinta).
+   Filosofia: fondo claro dominante + un solo acento rojo, opuesto a la
+   direccion oscura+ambar de la marca hermana ("Road-Ready Clarity"). */
+:root {
+  --gc-graphite: #f4ece9;       /* tinte calido claro, alterna con blanco puro */
+  --gc-graphite-soft: #ede1dc;  /* tinte calido claro, ligeramente distinto */
+  --gc-warm-white: #fbfaf8;     /* fondo principal / texto sobre el bloque rojo */
+  --gc-metal-gray: #6b6560;     /* texto secundario sobre fondos claros */
+  --gc-ink: #1a1a1a;            /* texto principal sobre superficies claras */
+  --gc-amber: #c81e2c;          /* acento unico: CTA, botones, bloque FinalCta */
+  --gc-amber-strong: #9c1620;   /* hover / estado activo del acento */
+  --gc-glass-blue: #6b6560;     /* sin azul: reutiliza el gris neutro, un solo acento cromatico (rojo) */
+  --gc-danger: #1a1a1a;         /* badge DEMO en tinta, para no mezclarse con el acento rojo de marca */
+
+  --gc-radius-sm: 6px;
+  --gc-radius-md: 12px;
+  --gc-radius-lg: 20px;
+
+  --gc-font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
