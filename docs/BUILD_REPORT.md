@@ -67,3 +67,53 @@ bloqueos:
 siguiente_accion: "Lups revisa localmente (npm run dev) y envia a Oscar para recabar telefono, horario, nombre de marca exacto y fotografias"
 requiere_aprobacion: true
 ```
+
+## 2026-09-22 — Rediseno cinematografico "claro + dramatico"
+
+Pedido de Lups: el sitio se sentia igual en forma/acomodo a DC Glass
+Collision, solo con otro color — pidio taller "de pelicula", animado, con
+fotografia y mas CTAs/secciones. Antes de tocar codigo se confirmo con
+Lups (1) que el pedido era para este proyecto y (2) la direccion visual:
+se opto por mantener el fondo claro de Clean Slate (no oscurecer todo el
+sitio) y lograr el drama con fotografia/scrims/movimiento — para no
+converger visualmente con DC Glass Collision, protegiendo la estrategia
+anti-duplicado ya documentada.
+
+Cambios: ver detalle completo en `docs/ASSET_REGISTER.md` (Ronda
+2026-09-22). Resumen: Hero/Process/FinalCta con foto de fondo + scrim,
+Shop con fotos en vez de iconos, seccion nueva Guarantee (CTA a media
+pagina), CTA flotante de escritorio nuevo, orden de secciones reordenado
+respecto a DC Glass Collision, hover-lift en tarjetas de Services y
+Differentiators.
+
+Bloqueo abierto: las 4 fotos de referencia se generaron pero no se
+pudieron copiar al proyecto por una politica de red de la organizacion que
+bloquea el CDN de origen — se muestran en el chat para que Lups las
+descargue y las coloque el mismo en `public/images/` (ver instrucciones en
+el chat). El codigo ya esta cableado a esas rutas con fallback visual si
+faltan, asi que no rompe nada mientras tanto.
+
+```yaml
+cliente: "Oscar Rodriguez"
+slug: "glass-collision"
+ruta: "Clientes/glass-collision/web"
+fase: "rediseno visual cinematografico, sin datos reales de contacto todavia"
+documentado: true
+estructura_valida: true
+lint: true
+compila: true
+funciona_en_ejecucion: true
+listo_para_produccion: false
+publicado_verificado: false
+evidencia:
+  - "npx tsc --noEmit -> sin errores"
+  - "npm run lint -> sin errores"
+  - "npm run build -> rutas / y /es generadas como estatico"
+  - "npm run dev + curl -> GET / 200, GET /es 200, GET /api/health 200, marcadores cinematograficos presentes en el HTML"
+bloqueos:
+  - "Fotos de referencia generadas pero no copiadas al proyecto (bloqueo de red del CDN de origen) — pendiente que Lups las guarde en public/images/"
+  - "Sin telefono/whatsapp/email/horario reales (CTAs ocultos en la UI a proposito)"
+  - "Riesgo de duplicidad de domicilio frente a DC Glass Collision (ver CLIENT_BRIEF.md)"
+siguiente_accion: "Lups guarda las 4 fotos en public/images/ (nombres exactos en el chat) y revisa npm run dev en su Mac"
+requiere_aprobacion: true
+```

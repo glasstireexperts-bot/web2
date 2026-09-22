@@ -7,3 +7,55 @@ html {
 body {
   font-family: var(--gc-font-sans);
 }
+
+/* ---- Sistema cinematografico "claro + dramatico" ----
+   El fondo general de la pagina se queda claro (Clean Slate). El "look de
+   pelicula" vive en bandas puntuales (Hero, Instalaciones, FinalCta) via
+   fotografia + estas capas — nunca oscureciendo la pagina completa. */
+
+.gc-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+.gc-scrim-bottom { background: var(--gc-scrim-bottom); }
+.gc-scrim-vertical { background: var(--gc-scrim-vertical); }
+.gc-scrim-side { background: var(--gc-scrim-side); }
+.gc-vignette { background: var(--gc-vignette); }
+.gc-spotlight { background: var(--gc-spotlight); }
+
+/* Barras tipo "letterbox" — referencia visual de cine, decorativas */
+.gc-letterbox::before,
+.gc-letterbox::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: clamp(8px, 2.5vw, 22px);
+  background: var(--gc-ink);
+  z-index: 20;
+}
+.gc-letterbox::before { top: 0; }
+.gc-letterbox::after { bottom: 0; }
+
+/* Particulas flotantes (chispas/polvo) — decorativas, respetan reduced-motion */
+@keyframes gc-drift {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: var(--gc-particle-opacity, 0.8); }
+  90% { opacity: var(--gc-particle-opacity, 0.8); }
+  100% { transform: translateY(-140px) translateX(18px); opacity: 0; }
+}
+.gc-particle {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--gc-amber);
+  animation: gc-drift linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gc-particle { animation: none; opacity: 0; }
+}

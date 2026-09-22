@@ -25,6 +25,7 @@ export const esUS: Dictionary = {
     ctaPrimary: "Llama para tu estimado",
     ctaSecondary: "Ver servicios",
     reviewsPendingNote: "",
+    photoDisclaimer: "Fotografia de referencia — se reemplaza por fotos reales de Glass Collision antes de publicar.",
   },
   trustBar: {
     heading: "Que puedes esperar",
@@ -88,6 +89,7 @@ export const esUS: Dictionary = {
       { title: "Revision final de ajuste y funcionamiento", description: "Revisamos el sellado, el ajuste y el funcionamiento antes de que te vayas." },
     ],
     disclaimer: "El tiempo exacto depende de la disponibilidad de piezas y de tu vehiculo — no prometemos un tiempo fijo antes de confirmar tu caso.",
+    ctaLabel: "Empieza con una llamada",
   },
   differentiators: {
     heading: "Por que los conductores de Washington, DC llaman a Glass Collision",
@@ -98,6 +100,17 @@ export const esUS: Dictionary = {
       "Revision de funcionamiento antes de que te vayas",
     ],
     disclaimer: "Describimos nuestro proceso con honestidad. No usamos superlativos que no podamos respaldar con evidencia.",
+  },
+  guarantee: {
+    heading: "Nuestro compromiso en cada trabajo",
+    body: "Revisamos ajuste, sellado y funcionamiento antes de que te vayas — y te decimos con claridad cuando algo todavia no esta confirmado.",
+    points: [
+      "Revision de funcionamiento antes de irte",
+      "Estimado claro antes de iniciar cualquier trabajo",
+      "Contacto directo con quien hace el trabajo",
+      "Respuestas honestas — incluso cuando algo aun no esta confirmado",
+    ],
+    ctaLabel: "Hablemos ahora",
   },
   shop: {
     heading: "Conoce el taller",

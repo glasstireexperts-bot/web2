@@ -97,6 +97,7 @@ export interface Dictionary {
     ctaPrimary: string
     ctaSecondary: string
     reviewsPendingNote: string
+    photoDisclaimer: string
   }
   trustBar: {
     heading: string
@@ -125,11 +126,18 @@ export interface Dictionary {
     heading: string
     steps: ProcessStepCopy[]
     disclaimer: string
+    ctaLabel: string
   }
   differentiators: {
     heading: string
     items: string[]
     disclaimer: string
+  }
+  guarantee: {
+    heading: string
+    body: string
+    points: string[]
+    ctaLabel: string
   }
   shop: {
     heading: string

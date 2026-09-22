@@ -25,6 +25,7 @@ export const enUS: Dictionary = {
     ctaPrimary: "Call for an estimate",
     ctaSecondary: "See services",
     reviewsPendingNote: "",
+    photoDisclaimer: "Reference photography — will be replaced with real photos of Glass Collision before publishing.",
   },
   trustBar: {
     heading: "What to expect",
@@ -88,6 +89,7 @@ export const enUS: Dictionary = {
       { title: "Final fit and function check", description: "We check the seal, seating, and function before you leave." },
     ],
     disclaimer: "Exact timing depends on parts availability and your vehicle — we will not promise a fixed turnaround before confirming your case.",
+    ctaLabel: "Start with a call",
   },
   differentiators: {
     heading: "Why Washington, DC drivers call Glass Collision",
@@ -98,6 +100,17 @@ export const enUS: Dictionary = {
       "Function check before you drive away",
     ],
     disclaimer: "We describe our process honestly. We do not use superlatives we cannot back up with evidence.",
+  },
+  guarantee: {
+    heading: "Our commitment on every job",
+    body: "We check fit, seal, and function before you drive away — and we say so plainly when something isn't confirmed yet.",
+    points: [
+      "Function check before you leave",
+      "Clear estimate before any work starts",
+      "Direct contact with the people doing the work",
+      "Honest answers — including when something isn't confirmed yet",
+    ],
+    ctaLabel: "Talk to us now",
   },
   shop: {
     heading: "Inside Glass Collision",

@@ -1,7 +1,11 @@
 /* Direccion visual "Clean Slate" — Glass Collision (segunda ubicacion, misma
    operacion que DC Glass Collision, marca deliberadamente distinta).
    Filosofia: fondo claro dominante + un solo acento rojo, opuesto a la
-   direccion oscura+ambar de la marca hermana ("Road-Ready Clarity"). */
+   direccion oscura+ambar de la marca hermana ("Road-Ready Clarity").
+   Capa cinematografica (2026-09-22): el efecto "taller de pelicula" se logra
+   con fotografia de alto contraste + scrim + grano en bandas puntuales —
+   la pagina NUNCA se oscurece por completo, para no converger visualmente
+   con DC Glass Collision (riesgo de duplicado ya documentado). */
 :root {
   --gc-graphite: #f4ece9;       /* tinte calido claro, alterna con blanco puro */
   --gc-graphite-soft: #ede1dc;  /* tinte calido claro, ligeramente distinto */
@@ -18,6 +22,13 @@
   --gc-radius-lg: 20px;
 
   --gc-font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* --- Capa cinematografica --- */
+  --gc-scrim-bottom: linear-gradient(180deg, rgba(17,14,13,0) 0%, rgba(17,14,13,0.12) 45%, rgba(17,14,13,0.94) 100%);
+  --gc-scrim-vertical: linear-gradient(180deg, rgba(17,14,13,0.55) 0%, rgba(17,14,13,0.15) 38%, rgba(17,14,13,0.82) 100%);
+  --gc-scrim-side: linear-gradient(90deg, rgba(17,14,13,0.88) 0%, rgba(17,14,13,0.35) 48%, rgba(17,14,13,0.02) 78%);
+  --gc-vignette: radial-gradient(130% 90% at 50% 10%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.4) 100%);
+  --gc-spotlight: radial-gradient(55% 55% at 28% 18%, rgba(200,30,44,0.22) 0%, rgba(200,30,44,0) 70%);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -11,7 +11,7 @@ export function Differentiators({ dict }: { dict: Dictionary }) {
           {dict.differentiators.items.map((item) => (
             <li
               key={item}
-              className="rounded-[var(--gc-radius-md)] border border-black/10 bg-white p-4 text-sm text-[var(--gc-ink)]"
+              className="rounded-[var(--gc-radius-md)] border border-black/10 bg-white p-4 text-sm text-[var(--gc-ink)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[var(--gc-amber)]/40 hover:shadow-md"
             >
               {item}
             </li>

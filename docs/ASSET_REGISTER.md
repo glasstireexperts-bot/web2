@@ -60,3 +60,78 @@ Guardar los archivos reales en:
 `Clientes/glass-collision/perfil/` para logo/identidad — luego mover las
 versiones finales optimizadas a `web/public/images/` y `web/public/brand/`
 segun corresponda, y actualizar este registro.
+
+## Ronda 2026-09-22 — Rediseno cinematografico "claro + dramatico"
+
+Pedido explicito de Lups: el sitio se sentia con la misma forma/acomodo que
+DC Glass Collision solo con otro color. Se rediseno manteniendo la
+estrategia anti-duplicado (fondo claro dominante, NUNCA oscuro completo —
+ver riesgo de duplicidad documentado en `content/business.ts`), logrando el
+efecto "taller de pelicula" con fotografia de alto contraste, scrims,
+grano, particulas y mas animacion — no con un fondo oscuro global.
+
+Cambios de estructura (orden deliberadamente distinto al de DC Glass
+Collision):
+- Nuevo orden: Hero -> TrustBar -> UrgencyContext -> Services -> Process
+  (banda cinematografica) -> Shop/"Instalaciones" (fotos) -> Differentiators
+  -> Guarantee (nueva) -> Reviews -> ServiceArea -> Faq -> FinalCta.
+- Se retiro `Gallery` del flujo (`components/HomeSections.tsx`) por
+  redundante frente a `Services` (misma lista de servicios, solo iconos) —
+  el archivo `components/sections/Gallery.tsx` y el campo `dict.gallery`
+  se dejan sin usar en el codigo por si se recupera contenido de ahi;
+  candidato a borrar en una limpieza futura.
+- Nueva seccion `Guarantee.tsx` (banda de confianza + segundo CTA a media
+  pagina) — requiere el nuevo campo de contenido `dict.guarantee`.
+- Nuevo componente `FloatingCta.tsx` (CTA flotante de escritorio,
+  equivalente a `MobileCallBar` pero para pantallas >= sm) — tercer punto
+  de contacto ademas de Hero y FinalCta.
+- `Shop.tsx` reescrito: tarjetas de icono SVG -> tarjetas fotograficas con
+  scrim y hover-zoom (fachada, area de trabajo, equipo).
+- `Process.tsx` reescrito: tarjetas planas -> banda cinematografica con
+  foto de fondo + scrim vertical + CTA propio (`dict.process.ctaLabel`).
+- `Hero.tsx` reescrito: foto de fondo, scrim lateral, vinieta, spotlight
+  rojo, particulas de polvo/chispa (CSS, respeta `prefers-reduced-motion`),
+  entrada escalonada con `motion` (sin `Reveal`, sigue siendo lo primero
+  visible sin scroll), disclaimer de foto de referencia.
+- `FinalCta.tsx` reescrito: foto de fondo (misma imagen del Hero, para dar
+  continuidad de "apertura/cierre") + overlay rojo de marca.
+- `Services.tsx` / `Differentiators.tsx`: hover-lift (translate + sombra)
+  en las tarjetas.
+- `styles/tokens.css`: nuevas variables `--gc-scrim-*`, `--gc-vignette`,
+  `--gc-spotlight`.
+- `src/app/globals.css`: nuevas clases `.gc-grain`, `.gc-scrim-*`,
+  `.gc-vignette`, `.gc-spotlight`, `.gc-letterbox`, `.gc-particle`
+  (con `@keyframes gc-drift` y bloqueo por `prefers-reduced-motion`).
+- `content/types.ts` + `en-US.ts` + `es-US.ts`: se agregaron
+  `hero.photoDisclaimer`, `process.ctaLabel` y la seccion `guarantee`
+  (heading/body/points/ctaLabel) en ambos idiomas.
+
+### Fotografia — generada, PENDIENTE de copiar al proyecto
+Se generaron 4 fotos de referencia (IA, alto contraste, luz diurna
+dramatica, sin texto/logos/personas identificables) para dar vida visual
+al sitio mientras llegan fotos reales del taller. **No pude descargarlas yo
+mismo al proyecto: la politica de red de la organizacion bloquea el
+dominio del CDN donde se generaron** (mismo bloqueo tanto en mi sandbox
+como en el shell del Mac). Se mostraron en el chat para que Lups las
+guarde manualmente.
+
+Archivos esperados por el codigo (rutas ya cableadas, con fallback de
+gradiente oscuro si el archivo aun no existe — no rompe el render):
+- `public/images/hero-bg.png` — usada en Hero y FinalCta.
+- `public/images/storefront.png` — tarjeta "Fachada y senaletica" en Shop.
+- `public/images/workbay.png` — tarjeta "Area de trabajo" en Shop, fondo de
+  la banda Process.
+- `public/images/team.png` — tarjeta "Oscar & team" en Shop (la foto es
+  generica, NO es una foto real de Oscar ni de nadie identificable).
+
+Todas marcadas con `DemoNoticeBadge` ("DEMO") y con el disclaimer de texto
+correspondiente en `content/*.ts` — se reemplazan por fotografia real del
+taller antes de publicar, igual que el resto de placeholders del proyecto.
+
+Verificado (con `npm install` corrido tambien en el sandbox Linux solo para
+poder probar build/dev aqui — no afecta ni rompe la instalacion de Mac, los
+paquetes de plataforma son aditivos): `npx tsc --noEmit` limpio, `npm run
+lint` limpio, `npm run build` exitoso, `npm run dev` + `curl` en `/`, `/es`
+y `/api/health` devolvieron 200 con los marcadores cinematograficos
+(`gc-grain`, `gc-scrim-*`, `gc-particle`, `gc-vignette`) presentes en el
+HTML.

@@ -12,7 +12,7 @@ export function Services({ dict }: { dict: Dictionary }) {
           {dict.services.items.map((service) => (
             <article
               key={service.id}
-              className="rounded-[var(--gc-radius-md)] border border-black/5 bg-white p-5 shadow-sm"
+              className="rounded-[var(--gc-radius-md)] border border-black/5 bg-white p-5 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[var(--gc-amber)]/40 hover:shadow-lg hover:shadow-black/10"
             >
               <h3 className="text-base font-semibold text-[var(--gc-ink)]">{service.title}</h3>
               <p className="mt-2 text-sm text-[var(--gc-ink)]/75">{service.description}</p>
