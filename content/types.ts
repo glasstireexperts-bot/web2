@@ -39,7 +39,6 @@ export interface BusinessProfile {
   legalContact: Field<string>
   phone: Field<string>
   whatsapp: Field<string>
-  whatsappWidget: Field<string>
   email: Field<string>
   address: Field<Address>
   hours: Field<string>

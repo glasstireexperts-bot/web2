@@ -1,7 +1,7 @@
 # MAPS 2.0 — glass-collision
 
 Proyecto web independiente dentro de Google mas Maps / Somos Lazaro.
-Cliente: Oscar Rodriguez — Marca: Glass Collision (segunda ubicacion real,
+Cliente: Oscar Rodriguez — Marca: Oscar Auto Glass (segunda ubicacion real,
 misma operacion que DC Glass Collision — ver docs/CLIENT_BRIEF.md).
 
 Este proyecto se creo copiando la arquitectura de `../glass-tire-experts/web`
@@ -31,3 +31,4 @@ npm run build
 - Ningun boton de llamada/WhatsApp se muestra mientras phone/whatsapp sigan
   `status: "pending"` en content/business.ts (ver Hero, SiteHeader,
   MobileCallBar, FinalCta) — no se inventan numeros para rellenar la demo.
+  Telefono confirmado (2026-09-22): ambos CTA ya se muestran.

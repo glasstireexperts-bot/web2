@@ -11,11 +11,11 @@
 - [x] JSON-LD AutomotiveBusiness, sin campos pending/placeholder (verificado en runtime).
 - [x] Sin aggregateRating ni estrellas estructuradas (no implementado a proposito).
 - [x] NAP visible en HTML (footer, service area), no solo en el mapa.
-- [ ] Datos reales de NAP confirmados por Oscar (telefono, direccion, horario, email siguen "observed_public" o "pending").
-- [ ] Compra y verificacion del dominio glasscollision.com.
+- [x] Telefono, direccion y horario confirmados por Oscar (2026-09-22). Pendiente: email.
+- [ ] Verificacion de registro del dominio oscarautoglass.com (confirmado por el cliente, registro sin verificar).
 - [ ] Google Search Console / Bing Webmaster Tools (requiere dominio publicado).
 - [ ] Reemplazar resenas placeholder por resenas reales autorizadas.
-- [ ] Fotografia real (actualmente sin imagenes de producto/negocio en la Home; ver ASSET_REGISTER.md).
+- [ ] Fotografia real del local (hoy la Home usa imagenes generadas guardadas por Lups, no fotos reales del negocio; ver ASSET_REGISTER.md).
 - [x] prefers-reduced-motion respetado (styles/tokens.css).
 - [x] Movil: barra de llamada fija, CTA accesible (MobileCallBar.tsx).
 

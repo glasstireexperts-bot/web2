@@ -1,39 +1,41 @@
 import type { BusinessProfile } from "./types"
 
-// Fuente unica de NAP y datos de negocio de Glass Collision — SEGUNDA
-// UBICACION real del mismo operador de DC Glass Collision (Oscar Rodriguez).
-// De cara al publico este local se presenta con otra gestion; por
-// instruccion explicita de Lups (chat 2026-09-21) NO se publica en ningun
-// material (web, redes, Google) el nombre de la persona que lo atiende.
-// Ese detalle vive solo en Obsidian:
-// "Oscar Rodriguez — Glass Collision/00 Glass Collision — Expediente
-// (segunda ubicacion).md". No inventar telefono, horario ni fotos.
+// Fuente unica de NAP y datos de negocio de Oscar Auto Glass (antes "Glass
+// Collision") — SEGUNDA UBICACION real del mismo operador de DC Glass
+// Collision (Oscar Rodriguez). No inventar datos que no esten aqui.
+//
+// Nota de contexto (2026-09-22): la direccion real (4222 14th St NW) NO
+// coincide con la que se tenia anotada antes (4454 Nannie Helen Burroughs
+// Ave NE, a 3 numeros de DC Glass Collision) — el riesgo de duplicidad
+// documentado en rondas anteriores por proximidad de direccion queda
+// resuelto, son ubicaciones distintas de verdad. Tambien la marca paso de
+// "Glass Collision" (nombre generico inferido del dominio) a
+// "oscarautoglass.com" — un nombre que SI incluye el nombre de Oscar de
+// forma directa y publica, distinto del plan original de "otro dueno
+// aparente" descrito en el expediente de Obsidian. El limite que sigue de
+// pie sin excepcion: el nombre de Maria (hermana de Oscar) nunca se
+// publica en ningun material — eso no cambio.
 
 export const business: BusinessProfile = {
   brand: {
-    value: "Glass Collision",
+    value: "Oscar Auto Glass",
     status: "confirmed",
-    note: "Nombre inferido del dominio glasscollision.com, indicado por Lups en chat el 2026-09-21. Verificar capitalizacion/espaciado exactos antes de publicar.",
+    note: "Dominio indicado por Lups (chat 2026-09-22): oscarautoglass.com, nombre de marca 'oscarautoglass' sin espacios/mayusculas segun el mensaje original. Se muestra en la UI como 'Oscar Auto Glass' (espaciado/capitalizacion propia para legibilidad, no confirmado con Oscar) — verificar antes de imprimir en senaletica o material fisico.",
   },
   legalContact: {
     value: "Oscar Rodriguez",
     status: "confirmed",
-    note: "Operador real (mismo que DC Glass Collision). No se muestra en la UI publica bajo ninguna circunstancia — este campo es solo registro interno.",
+    note: "Operador real (mismo que DC Glass Collision). Con esta marca su nombre SI es publico (esta en el dominio) — ya no aplica el ocultamiento que tenia 'Glass Collision'. El limite que sigue vigente es unicamente sobre Maria (hermana de Oscar): su nombre nunca se publica.",
   },
   phone: {
-    value: "",
-    status: "pending",
-    note: "Oscar aun no tiene un telefono propio para este local (chat Lups 2026-09-21). No inventar numero. La UI oculta los botones de llamada mientras este campo siga pending.",
+    value: "+1 202-845-1312",
+    status: "confirmed",
+    note: "Confirmado por Lups en chat 2026-09-22.",
   },
   whatsapp: {
-    value: "",
-    status: "pending",
-    note: "Sin numero confirmado todavia. La UI oculta el boton de WhatsApp mientras este campo siga pending.",
-  },
-  whatsappWidget: {
-    value: "+1 202-555-0199",
-    status: "placeholder",
-    note: "Numero FICTICIO para el widget de chat (bloque reservado NANP 555-0100 a 555-0199, nunca asignable a una linea real, no le va a llegar a nadie). Pedido explicito de Lups (chat 2026-09-22): sin aviso visible en la UI. Reemplazar por el WhatsApp real de Oscar en cuanto lo confirme — es el UNICO lugar del codigo donde hay que cambiarlo.",
+    value: "+1 202-845-1312",
+    status: "confirmed",
+    note: "Se asume el mismo numero que el telefono (Lups dijo 'se le atiende por chat o llamada' sin dar un numero de WhatsApp aparte) — confirmar con Oscar si en realidad usa un numero distinto para WhatsApp.",
   },
   email: {
     value: "",
@@ -42,29 +44,29 @@ export const business: BusinessProfile = {
   },
   address: {
     value: {
-      street: "4454 Nannie Helen Burroughs Ave NE",
+      street: "4222 14th St NW",
       city: "Washington",
       region: "DC",
-      postalCode: "20019",
+      postalCode: "20011",
       country: "US",
     },
     status: "confirmed",
-    note: "Confirmado por Lups en chat 2026-09-21. ATENCION: a 3 numeros de la direccion de DC Glass Collision (4451 Nannie Helen Burroughs Ave NE), misma cuadra — riesgo real de duplicidad ante Google al dar de alta el Business Profile. Ver expediente Obsidian antes de cualquier alta de Google.",
+    note: "Confirmado por Lups en chat 2026-09-22 — reemplaza la direccion anterior (4454 Nannie Helen Burroughs Ave NE). Ubicacion real distinta a la de DC Glass Collision, sin riesgo de duplicidad por proximidad.",
   },
   hours: {
-    value: "",
-    status: "pending",
-    note: "Sin horario confirmado todavia para este local.",
+    value: "Every day, 8:00 AM to 7:00 PM",
+    status: "confirmed",
+    note: "Confirmado por Lups en chat 2026-09-22. 'Atencion al cliente 24 horas por chat o llamada' NO significa personal contestando de madrugada (confirmado explicitamente por Lups) — significa que se puede escribir/llamar a cualquier hora y se responde dentro del horario de operacion. No representar como soporte 24/7 real en la UI ni en JSON-LD.",
   },
   domain: {
-    value: "glasscollision.com",
-    status: "pending",
-    note: "Indicado por Lups 2026-09-21. Verificar disponibilidad/registro antes de tratarlo como propiedad del cliente.",
+    value: "oscarautoglass.com",
+    status: "confirmed",
+    note: "Indicado por Lups 2026-09-22, reemplaza glasscollision.com. Verificar que el dominio este realmente registrado a nombre del cliente antes de usarlo en Google Business Profile o anuncios pagados.",
   },
   spanishPhoneSupport: {
     value: false,
     status: "pending",
-    note: "Sin telefono propio todavia, no aplica confirmar idioma de atencion.",
+    note: "Ahora hay telefono confirmado, pero no se confirmo si se atiende en espanol — no asumir.",
   },
   mobileService: {
     value: false,
@@ -105,7 +107,7 @@ export const business: BusinessProfile = {
     facebook: {
       value: "",
       status: "pending",
-      note: "Sin Page confirmada para Glass Collision todavia.",
+      note: "Sin Page confirmada para esta marca todavia.",
     },
   },
 }

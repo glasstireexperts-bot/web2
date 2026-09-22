@@ -162,3 +162,50 @@ bloqueos:
 siguiente_accion: "Lups revisa en su Mac, guarda las 4 fotos en public/images/, y decide si el diseno ya se siente suficientemente distinto o se ajusta mas"
 requiere_aprobacion: true
 ```
+
+## 2026-09-22 (3) — Datos reales de negocio + cambio de marca/dominio
+
+Ver detalle completo en `docs/ASSET_REGISTER.md` (Ronda 2026-09-22 (3)) y
+`docs/CLIENT_BRIEF.md`. Resumen: Oscar envio, via Lups, telefono
+(+1 202-845-1312), direccion (4222 14th St NW, Washington, DC 20011),
+horario (todos los dias, 8:00 AM a 7:00 PM), aclaracion de "atencion 24
+horas" (disponibilidad de contacto, no soporte nocturno con personal), y
+el cambio de marca/dominio a "Oscar Auto Glass" / oscarautoglass.com.
+
+Propagado a `content/business.ts`, `lib/utils/url.ts`, `src/app/layout.tsx`
+(metadataBase), `lib/seo/jsonld.ts` (horario en JSON-LD, que estaba
+hardcodeado sin usar heredado de DC Glass Collision y se corrigio antes de
+activarse), `ChatWidget.tsx` (dejo el numero ficticio, usa el WhatsApp
+real) y ambos idiomas de contenido. Los CTA de llamada y WhatsApp, ocultos
+hasta ahora, ya se muestran en todo el sitio. El riesgo de duplicidad de
+domicilio frente a DC Glass Collision queda cerrado: la direccion real es
+una ubicacion distinta, sin proximidad. El limite sobre no publicar el
+nombre de Maria (hermana de Oscar) sigue vigente sin cambios; el nombre de
+Oscar si es publico porque forma parte de la marca.
+
+```yaml
+cliente: "Oscar Rodriguez"
+slug: "glass-collision"
+ruta: "Clientes/glass-collision/web"
+fase: "datos reales de contacto confirmados, pendiente fotografia real y aprobacion de resenas"
+documentado: true
+estructura_valida: true
+lint: true
+compila: true
+funciona_en_ejecucion: true
+listo_para_produccion: false
+publicado_verificado: false
+evidencia:
+  - "npx tsc --noEmit -> sin errores"
+  - "npm run lint -> sin errores"
+  - "npm run build -> rutas / y /es generadas como estatico"
+  - "grep del proyecto -> sin menciones residuales de 'Glass Collision'/'glasscollision.com' en codigo o contenido de produccion"
+bloqueos:
+  - "Fotografia real del local pendiente (hoy usa fotografia generada por IA guardada por Lups)"
+  - "Resenas de muestra se ven como reales (sin marca de demo) — Lups debe reemplazarlas por resenas reales y autorizadas antes de publicar"
+  - "Email del negocio sin definir (pending)"
+  - "Dominio oscarautoglass.com confirmado por el cliente, pendiente verificar que este registrado a su nombre"
+  - "No dar de alta Google Business Profile hasta confirmar senializacion visitable propia del local"
+siguiente_accion: "Lups revisa en su Mac (npm run dev), confirma que los CTA de llamada/WhatsApp ya se ven, y hace git push del commit correspondiente"
+requiere_aprobacion: true
+```

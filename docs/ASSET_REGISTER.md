@@ -1,17 +1,16 @@
 # Registro de assets — glass-collision
 
-Ninguna fotografia real fue usada todavia. Este proyecto se creo copiando la
-arquitectura de `../glass-tire-experts/web` (misma estructura de componentes,
-mismos placeholders tipo "DEMO"), recoloreado con la paleta "Clean Slate".
+Estado actual (actualizado 2026-09-22): fotografia generada por IA en uso
+(ver Ronda 2026-09-22, "Fotografia"), pendiente de fotografia real del
+local. Telefono, direccion y horario ya son datos reales confirmados por
+Oscar — dejaron de ser placeholder (ver Ronda 2026-09-22 (3)).
 
 | Elemento | Fuente | Tipo | Seccion | Debe reemplazarse por | Estado |
 |---|---|---|---|---|---|
-| Fondo Hero (gradiente diagonal rojo tenue) | Generado en CSS, sin imagen | generated (css) | Hero | Fotografia real del segundo local, o se mantiene como fondo de marca | placeholder |
-| 7 iconos de galeria de servicios | SVG lineal, mismo set que DC Glass Collision | generated (svg) | Gallery | Fotografia real de cada servicio completado, con badge DEMO removido | placeholder |
-| 3 iconos de "Shop" (fachada, area de trabajo, equipo) | SVG lineal | generated (svg) | Shop | Fotografia real de ESTE local (no reutilizar fotos de DC Glass Collision) | placeholder |
-| 3 tarjetas de resena | Texto demostrativo | placeholder | Reviews | Resenas reales autorizadas de este local | placeholder |
-| Mapa de ubicacion | Bloque de texto "Map placeholder" | placeholder | Service Area | Embed real de Google Maps — SOLO despues de resolver el riesgo de duplicidad con DC Glass Collision (ver CLIENT_BRIEF.md) | placeholder |
-| Boton de llamada / WhatsApp | No renderizado | n/a | Hero, Header, MobileCallBar, FinalCta | Se activan solos cuando `business.phone`/`business.whatsapp` dejen de ser `status: "pending"` en content/business.ts | oculto a proposito |
+| Fondo Hero / Shop / Process (fotografia generada) | IA, guardada manualmente por Lups | generated (imagen) | Hero, Shop, Process, FinalCta | Fotografia real de ESTE local (fachada, area de trabajo, equipo) | generado, pendiente de foto real |
+| 3 tarjetas de resena | Texto de muestra en tono, no de clientes reales | placeholder | Reviews | Resenas reales autorizadas de este local (Lups las reemplaza cuando el cliente apruebe) | placeholder |
+| Mapa de ubicacion | Bloque de texto "Map placeholder" | placeholder | Service Area | Embed real de Google Maps — direccion ya confirmada (4222 14th St NW), sin riesgo de duplicidad pendiente | placeholder |
+| Boton de llamada / WhatsApp | Renderizado, con telefono real | activo | Hero, Header, MobileCallBar, FinalCta, FloatingCta, ChatWidget | — ya usa `+1 202-845-1312` (confirmado) | activo |
 
 ## Ronda 2026-09-21 — scaffold inicial
 
@@ -217,3 +216,53 @@ Verificado: `npx tsc --noEmit`, `npm run lint`, `npm run build` limpios;
 `npm run dev` + curl en `/` y `/es` → 200; se confirmó con grep sobre el
 HTML compilado que ya no aparece "demo", "placeholder illustrat",
 "sustituir" ni "replace before publishing" en ningún idioma.
+
+## Ronda 2026-09-22 (3) — Datos reales del negocio + cambio de marca/dominio
+
+Oscar envio, via Lups: telefono, direccion, horario, aclaracion de
+"atencion 24 horas" y el cambio de marca/dominio a "Oscar Auto Glass" /
+oscarautoglass.com (reemplaza el nombre inferido "Glass Collision" y el
+dominio glasscollision.com).
+
+**Riesgo verificado antes de ejecutar**: la direccion nueva (4222 14th St
+NW) no coincidia con ninguna de las dos direcciones ya documentadas en el
+proyecto (ni la de este local, ni la de DC Glass Collision) — en vez de
+asumir a que proyecto correspondia, se pregunto directamente a Lups.
+Tambien se confirmo el alcance real de "atencion 24 horas": es
+disponibilidad de contacto (chat/llamada en cualquier momento), la
+respuesta llega en horario — no es soporte nocturno con personal ni
+despacho real de emergencia. El servicio `emergency-24-7` sigue `pending`
+a proposito por esto.
+
+Cambios:
+- `content/business.ts`: `brand` -> "Oscar Auto Glass" (confirmed);
+  `phone`/`whatsapp` -> "+1 202-845-1312" (confirmed, ambos CTA activos en
+  todo el sitio); `address` -> 4222 14th St NW, Washington, DC 20011
+  (confirmed, reemplaza la direccion anterior y su riesgo de proximidad
+  con DC Glass Collision); `hours` -> "Every day, 8:00 AM to 7:00 PM"
+  (confirmed); `domain` -> "oscarautoglass.com" (confirmed). Nota agregada
+  en el archivo: la marca ahora incluye el nombre de Oscar directamente
+  (antes se evitaba mostrar un nombre propio) — el limite que sigue
+  vigente sin cambios es unicamente sobre Maria, que nunca se publica.
+- `lib/utils/url.ts`: `SITE_URL` -> `https://oscarautoglass.com`.
+- `src/app/layout.tsx`: `metadataBase` -> `https://oscarautoglass.com`.
+- `lib/seo/jsonld.ts`: el bloque `openingHoursSpecification` estaba
+  hardcodeado en 7:00-20:00 (heredado de DC Glass Collision) y nunca se
+  activaba porque `hours.status` era `pending`. Con el horario ya
+  confirmado el bloque se activa, asi que se corrigio a 8:00-19:00 (horario
+  real) antes de que se activara con el dato equivocado.
+- `components/layout/ChatWidget.tsx`: dejo de usar el numero FICTICIO
+  reservado (bloque NANP 555-0100/0199) y ahora usa
+  `business.whatsapp.value` real, igual que el resto de los CTA.
+- `content/en-US.ts` / `es-US.ts`: nombre de marca actualizado a "Oscar
+  Auto Glass" en todas las ocurrencias; `hoursLabel` con el horario real;
+  `trustBar` con un quinto punto sobre poder escribir/llamar en cualquier
+  momento; `chatWidget.intro` reescrito para reflejar honestamente que la
+  respuesta llega en horario, no 24/7 con personal.
+
+Verificado: `npx tsc --noEmit`, `npm run lint`, `npm run build` limpios;
+grep sobre el proyecto confirma cero menciones residuales de "Glass
+Collision"/"glasscollision.com" en codigo/contenido de produccion (solo
+quedan en documentacion historica de `docs/` y en `package.json`/
+`package-lock.json` como nombre interno del paquete, sin impacto en el
+sitio publicado).

@@ -4,7 +4,7 @@ import "./globals.css"
 import "@styles/tokens.css"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://glasscollision.com"),
+  metadataBase: new URL("https://oscarautoglass.com"),
   title: {
     default: business.brand.value,
     template: "%s",

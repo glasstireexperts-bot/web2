@@ -5,7 +5,7 @@ export const enUS: Dictionary = {
   htmlLang: "en-US",
   path: "/",
   meta: {
-    title: "Auto Glass Repair Washington, DC | Glass Collision",
+    title: "Auto Glass Repair Washington, DC | Oscar Auto Glass",
     description:
       "Auto glass repair and windshield replacement in Washington, DC. Clear answers, a straightforward process, and a direct path back to the road. Call for an estimate.",
   },
@@ -13,7 +13,7 @@ export const enUS: Dictionary = {
     languageLabel: "English",
     languageSwitchTo: "Espanol",
     languageSwitchHref: "/es",
-    hoursLabel: "Hours coming soon",
+    hoursLabel: "Every day, 8am–7pm",
     locationLabel: "Washington, DC",
     callLabel: "Call now",
     whatsappLabel: "WhatsApp",
@@ -33,6 +33,7 @@ export const enUS: Dictionary = {
       "Bilingual team: English & Espanol*",
       "Auto glass, windows, and regulators",
       "Clear estimate before any work starts",
+      "Reach us anytime — real answers during business hours",
     ],
     processLine: "Call → confirm your vehicle and glass → get your estimate → final fit and function check.",
   },
@@ -76,7 +77,7 @@ export const enUS: Dictionary = {
     ctaLabel: "Start with a call",
   },
   differentiators: {
-    heading: "Why Washington, DC drivers call Glass Collision",
+    heading: "Why Washington, DC drivers call Oscar Auto Glass",
     items: [
       "Direct contact — you talk to the people doing the work",
       "Local presence in Washington, DC",
@@ -97,7 +98,7 @@ export const enUS: Dictionary = {
     ctaLabel: "Talk to us now",
   },
   shop: {
-    heading: "Inside Glass Collision",
+    heading: "Inside Oscar Auto Glass",
     intro: "A look at where the work happens.",
     items: [
       { id: "storefront", label: "Storefront & signage" },
@@ -136,7 +137,7 @@ export const enUS: Dictionary = {
     items: [
       { question: "What vehicle information do you need?", answer: "Year, make, model, and which piece of glass is affected. That is enough to start a conversation about your options." },
       { question: "Do you repair chips or replace the full windshield?", answer: "It depends on the size, depth, and location of the damage. We will tell you honestly which option applies to your windshield." },
-      { question: "Do you offer mobile service?", answer: "This is not confirmed yet for Glass Collision — call and we will let you know what is available for your location." },
+      { question: "Do you offer mobile service?", answer: "This is not confirmed yet for Oscar Auto Glass — call and we will let you know what is available for your location." },
       { question: "Can you replace side and rear windows?", answer: "Yes, side and rear window replacement are part of our core services." },
       { question: "Do you work with insurance?", answer: "Insurance handling is not confirmed yet — call and we will walk you through what we can currently support." },
       { question: "Do you offer service in Spanish?", answer: "The team is working toward full bilingual phone support — call and ask, and we will do our best to assist you in Spanish." },
@@ -152,8 +153,8 @@ export const enUS: Dictionary = {
     ctaWhatsapp: "Message us on WhatsApp",
   },
   footer: {
-    hoursLabel: "Hours coming soon",
-    addressPendingNote: "Hours are being confirmed before publication.",
+    hoursLabel: "Every day, 8am–7pm",
+    addressPendingNote: "",
     privacyLabel: "Privacy",
     attribution: "A MAPS 2.0 project by Somos Lazaro",
     languageLinks: [
@@ -168,7 +169,7 @@ export const enUS: Dictionary = {
   },
   chatWidget: {
     heading: "How can we help today?",
-    intro: "Write your question and send it to us on WhatsApp — a real person answers.",
+    intro: "Write anytime — send it to us on WhatsApp and we will answer as soon as we can, during business hours.",
     placeholder: "E.g. My windshield has a crack, can you fix it?",
     sendLabel: "Send on WhatsApp",
   },

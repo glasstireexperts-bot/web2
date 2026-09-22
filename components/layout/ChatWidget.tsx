@@ -9,23 +9,22 @@ import { toWhatsAppHref } from "@lib/contact/whatsapp"
 /**
  * Burbuja de chat -> WhatsApp. No es un chatbot con respuestas automaticas:
  * el visitante escribe, el boton abre WhatsApp con el mensaje ya listo para
- * enviar a un numero real (una persona contesta del otro lado).
- *
- * business.whatsappWidget es FICTICIO a proposito (pedido explicito de
- * Lups, chat 2026-09-22): numero del bloque reservado NANP 555-0100 a
- * 555-0199, que nunca se asigna a una linea real, asi que si alguien lo usa
- * antes de que se actualice, el mensaje simplemente no llega a nadie — no
- * se hace pasar por un numero real de Glass Collision. Lups reemplaza
- * `whatsappWidget.value` en content/business.ts por el numero real de Oscar
- * en cuanto lo tenga; es el unico lugar que hay que tocar.
+ * enviar al numero real de Oscar Auto Glass (una persona contesta del otro
+ * lado, dentro de horario de operacion — no es soporte 24/7 staffed, ver
+ * dict.chatWidget.intro y content/business.ts -> hours.note).
+ * Usa business.whatsapp directamente (numero real, confirmado 2026-09-22);
+ * se oculta si en algun momento vuelve a quedar pending.
  */
 export function ChatWidget({ dict }: { dict: Dictionary }) {
   const [open, setOpen] = useState(false)
   const [message, setMessage] = useState("")
+  const whatsappReady = business.whatsapp.status !== "pending" && business.whatsapp.status !== "placeholder"
+
+  if (!whatsappReady) return null
 
   function handleSend() {
     const text = message.trim() || dict.chatWidget.placeholder
-    const href = toWhatsAppHref(business.whatsappWidget.value, text)
+    const href = toWhatsAppHref(business.whatsapp.value, text)
     window.open(href, "_blank", "noopener,noreferrer")
     setMessage("")
     setOpen(false)

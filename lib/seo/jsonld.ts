@@ -31,14 +31,14 @@ export function buildLocalBusinessJsonLd() {
   }
 
   if (business.hours.status !== "pending" && business.hours.status !== "placeholder") {
-    // Mon-Sun 7:00 AM-8:00 PM -> todos los dias, mismo horario.
+    // Todos los dias, 8:00 AM - 7:00 PM (horario real confirmado por el cliente).
     data.openingHoursSpecification = {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [
         "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",
       ],
-      opens: "07:00",
-      closes: "20:00",
+      opens: "08:00",
+      closes: "19:00",
     }
   }
 

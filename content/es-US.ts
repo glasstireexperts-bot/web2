@@ -5,7 +5,7 @@ export const esUS: Dictionary = {
   htmlLang: "es-US",
   path: "/es",
   meta: {
-    title: "Reparacion de Vidrio Automotriz en Washington DC | Glass Collision",
+    title: "Reparacion de Vidrio Automotriz en Washington DC | Oscar Auto Glass",
     description:
       "Reparacion de vidrio automotriz y reemplazo de parabrisas en Washington, DC. Respuestas claras, un proceso directo y una ruta clara para volver al camino. Llama para tu estimado.",
   },
@@ -13,7 +13,7 @@ export const esUS: Dictionary = {
     languageLabel: "Espanol",
     languageSwitchTo: "English",
     languageSwitchHref: "/",
-    hoursLabel: "Horario proximamente",
+    hoursLabel: "Todos los dias, 8am–7pm",
     locationLabel: "Washington, DC",
     callLabel: "Llamar ahora",
     whatsappLabel: "WhatsApp",
@@ -33,6 +33,7 @@ export const esUS: Dictionary = {
       "Equipo bilingue: English & Espanol*",
       "Vidrio automotriz, ventanas y reguladores",
       "Estimado claro antes de comenzar cualquier trabajo",
+      "Escribenos cuando quieras — te contestamos dentro de nuestro horario",
     ],
     processLine: "Llamas → confirmamos vehiculo y vidrio → recibes tu estimado → revision final de ajuste y funcionamiento.",
   },
@@ -76,7 +77,7 @@ export const esUS: Dictionary = {
     ctaLabel: "Empieza con una llamada",
   },
   differentiators: {
-    heading: "Por que los conductores de Washington, DC llaman a Glass Collision",
+    heading: "Por que los conductores de Washington, DC llaman a Oscar Auto Glass",
     items: [
       "Contacto directo — hablas con quienes hacen el trabajo",
       "Presencia local en Washington, DC",
@@ -136,7 +137,7 @@ export const esUS: Dictionary = {
     items: [
       { question: "Que informacion del vehiculo necesitan?", answer: "Anio, marca, modelo y que pieza de vidrio esta afectada. Con eso es suficiente para empezar a hablar de tus opciones." },
       { question: "Reparan chips o reemplazan el parabrisas completo?", answer: "Depende del tamano, la profundidad y la ubicacion del dano. Te diremos con honestidad que opcion aplica a tu parabrisas." },
-      { question: "Ofrecen servicio movil?", answer: "Esto todavia no esta confirmado para Glass Collision — llama y te decimos que esta disponible para tu ubicacion." },
+      { question: "Ofrecen servicio movil?", answer: "Esto todavia no esta confirmado para Oscar Auto Glass — llama y te decimos que esta disponible para tu ubicacion." },
       { question: "Pueden reemplazar ventanas laterales y traseras?", answer: "Si, el reemplazo de ventanas laterales y traseras es parte de nuestros servicios principales." },
       { question: "Trabajan con seguros?", answer: "El tramite con aseguradoras todavia no esta confirmado — llama y te explicamos que podemos apoyar por ahora." },
       { question: "Ofrecen atencion en espanol?", answer: "El equipo esta trabajando hacia atencion telefonica bilingue completa — llama y pregunta, haremos lo posible por atenderte en espanol." },
@@ -152,8 +153,8 @@ export const esUS: Dictionary = {
     ctaWhatsapp: "Escribenos por WhatsApp",
   },
   footer: {
-    hoursLabel: "Horario proximamente",
-    addressPendingNote: "El horario se esta confirmando antes de publicar.",
+    hoursLabel: "Todos los dias, 8am–7pm",
+    addressPendingNote: "",
     privacyLabel: "Privacidad",
     attribution: "Un proyecto MAPS 2.0 de Somos Lazaro",
     languageLinks: [
@@ -168,7 +169,7 @@ export const esUS: Dictionary = {
   },
   chatWidget: {
     heading: "En que te ayudamos hoy?",
-    intro: "Escribe tu pregunta y la enviamos a WhatsApp — te contesta una persona real.",
+    intro: "Escribenos cuando quieras — la enviamos a WhatsApp y te contestamos lo antes posible, dentro de nuestro horario.",
     placeholder: "Ej. Mi parabrisas tiene una grieta, la pueden reparar?",
     sendLabel: "Enviar por WhatsApp",
   },
