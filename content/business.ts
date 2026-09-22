@@ -10,7 +10,7 @@ import type { BusinessProfile } from "./types"
 // documentado en rondas anteriores por proximidad de direccion queda
 // resuelto, son ubicaciones distintas de verdad. Tambien la marca paso de
 // "Glass Collision" (nombre generico inferido del dominio) a
-// "oscarautoglass.com" — un nombre que SI incluye el nombre de Oscar de
+// "oscarglassshop.com" — un nombre que SI incluye el nombre de Oscar de
 // forma directa y publica, distinto del plan original de "otro dueno
 // aparente" descrito en el expediente de Obsidian. El limite que sigue de
 // pie sin excepcion: el nombre de Maria (hermana de Oscar) nunca se
@@ -20,7 +20,7 @@ export const business: BusinessProfile = {
   brand: {
     value: "Oscar Auto Glass",
     status: "confirmed",
-    note: "Dominio indicado por Lups (chat 2026-09-22): oscarautoglass.com, nombre de marca 'oscarautoglass' sin espacios/mayusculas segun el mensaje original. Se muestra en la UI como 'Oscar Auto Glass' (espaciado/capitalizacion propia para legibilidad, no confirmado con Oscar) — verificar antes de imprimir en senaletica o material fisico.",
+    note: "Nombre de marca indicado por Lups (chat 2026-09-22): 'Oscar Auto Glass', confirmado exacto por Lups 2026-09-22 (coincide con como aparece publicado en oscarglassshop.com, el sitio real ya en vivo). El dominio correcto es oscarglassshop.com (corregido 2026-09-22; antes se habia anotado por error oscarautoglass.com, que no es el dominio real).",
   },
   legalContact: {
     value: "Oscar Rodriguez",
@@ -59,9 +59,9 @@ export const business: BusinessProfile = {
     note: "Confirmado por Lups en chat 2026-09-22. 'Atencion al cliente 24 horas por chat o llamada' NO significa personal contestando de madrugada (confirmado explicitamente por Lups) — significa que se puede escribir/llamar a cualquier hora y se responde dentro del horario de operacion. No representar como soporte 24/7 real en la UI ni en JSON-LD.",
   },
   domain: {
-    value: "oscarautoglass.com",
+    value: "oscarglassshop.com",
     status: "confirmed",
-    note: "Indicado por Lups 2026-09-22, reemplaza glasscollision.com. Verificar que el dominio este realmente registrado a nombre del cliente antes de usarlo en Google Business Profile o anuncios pagados.",
+    note: "Corregido por Lups 2026-09-22: el dominio real y ya en vivo es oscarglassshop.com (no oscarautoglass.com, que se habia anotado antes por error). Confirmado por Lups que es el mismo proyecto que se esta construyendo aqui.",
   },
   spanishPhoneSupport: {
     value: false,

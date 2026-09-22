@@ -12,9 +12,11 @@
 - Producto: MAPS 2.0 de Somos Lazaro
 - Mercado: Washington, DC
 - Idiomas: en-US (raiz /) y es-US (/es/)
-- Dominio: oscarautoglass.com — confirmado por Lups 2026-09-22 (reemplaza
-  glasscollision.com), pendiente verificar registro a nombre del cliente
-- Estado del dominio: confirmado por el cliente, verificacion de registro pendiente
+- Dominio: oscarglassshop.com — corregido por Lups 2026-09-22 (el dato
+  anterior, oscarautoglass.com, estaba mal anotado). Es el mismo proyecto
+  de este repo, ya deployado y en vivo en ese dominio.
+- Estado del dominio: en vivo, verificado por Lups directamente (link
+  compartido en chat)
 
 ## NAP (ver content/business.ts para estado campo por campo)
 - Nombre: Oscar Auto Glass — estado: confirmado (Lups, 2026-09-22)

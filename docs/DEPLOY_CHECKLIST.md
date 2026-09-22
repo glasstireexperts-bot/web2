@@ -2,7 +2,7 @@
 
 No autorizado en esta tarea. Nada de esto se ejecuto.
 
-- [ ] Verificar que oscarautoglass.com este registrado a nombre/control de Oscar (dominio confirmado por el cliente 2026-09-22, registro sin verificar).
+- [x] Dominio corregido y verificado en vivo: oscarglassshop.com (2026-09-22, confirmado por Lups — ya no es oscarautoglass.com).
 - [ ] Crear/conectar repositorio Git remoto (decision pendiente: propiedad del cliente).
 - [ ] Conectar Vercel (o plataforma definida) desde cuenta aprobada.
 - [ ] Configurar DNS del dominio comprado.

@@ -30,7 +30,7 @@ export const esUS: Dictionary = {
     heading: "Que puedes esperar",
     items: [
       "Servicio local en Washington, DC",
-      "Equipo bilingue: English & Espanol*",
+      "Trabajando hacia atencion bilingue completa (Ingles/Espanol)",
       "Vidrio automotriz, ventanas y reguladores",
       "Estimado claro antes de comenzar cualquier trabajo",
       "Escribenos cuando quieras — te contestamos dentro de nuestro horario",

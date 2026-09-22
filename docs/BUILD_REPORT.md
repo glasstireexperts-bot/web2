@@ -209,3 +209,42 @@ bloqueos:
 siguiente_accion: "Lups revisa en su Mac (npm run dev), confirma que los CTA de llamada/WhatsApp ya se ven, y hace git push del commit correspondiente"
 requiere_aprobacion: true
 ```
+
+## 2026-09-22 (4) — Correccion de dominio (oscarglassshop.com) + fix de reclamo bilingue
+
+Ver detalle en `docs/ASSET_REGISTER.md` (Ronda 2026-09-22 (4)). Lups
+compartio el link real del sitio ya en vivo y confirmo que es este mismo
+proyecto — el dominio correcto es `oscarglassshop.com`, no
+`oscarautoglass.com` como se habia anotado por error en la ronda
+anterior. Corregido en `content/business.ts`, `lib/utils/url.ts` y
+`src/app/layout.tsx`. Tambien se detecto y corrigio una inconsistencia:
+el trust bar prometia equipo bilingue como si fuera un hecho, mientras
+`business.ts` sigue teniendo `spanishPhoneSupport: pending` y el FAQ del
+mismo sitio lo trata como "en progreso" — se alineo el trust bar con esa
+realidad.
+
+```yaml
+cliente: "Oscar Rodriguez"
+slug: "glass-collision"
+ruta: "Clientes/glass-collision/web"
+fase: "dominio real corregido y verificado en vivo; pendiente fotografia real, resenas autorizadas y confirmar soporte en espanol"
+documentado: true
+estructura_valida: true
+lint: true
+compila: true
+funciona_en_ejecucion: true
+listo_para_produccion: false
+publicado_verificado: true
+evidencia:
+  - "npx tsc --noEmit -> sin errores"
+  - "npm run lint -> sin errores"
+  - "npm run build -> rutas / y /es generadas como estatico"
+  - "Sitio verificado en vivo por Lups en https://www.oscarglassshop.com/ (mismo NAP y servicios que content/business.ts)"
+bloqueos:
+  - "Fotografia real del local pendiente (hoy usa fotografia generada por IA)"
+  - "Resenas de muestra se ven como reales (sin marca de demo) — Lups debe reemplazarlas por resenas reales y autorizadas"
+  - "spanishPhoneSupport sigue pending — no representar como bilingue confirmado en ningun material nuevo (Maps incluido)"
+  - "Email del negocio sin definir (pending)"
+siguiente_accion: "Usar oscarglassshop.com como sitio web en la ficha de Google Maps; confirmar con Oscar si realmente hay atencion en espanol antes de agregarlo como atributo en Maps"
+requiere_aprobacion: true
+```

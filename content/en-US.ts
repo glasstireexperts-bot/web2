@@ -30,7 +30,7 @@ export const enUS: Dictionary = {
     heading: "What to expect",
     items: [
       "Local service in Washington, DC",
-      "Bilingual team: English & Espanol*",
+      "Working toward full bilingual support (English/Espanol)",
       "Auto glass, windows, and regulators",
       "Clear estimate before any work starts",
       "Reach us anytime — real answers during business hours",

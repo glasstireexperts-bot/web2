@@ -12,7 +12,7 @@
 - [x] Sin aggregateRating ni estrellas estructuradas (no implementado a proposito).
 - [x] NAP visible en HTML (footer, service area), no solo en el mapa.
 - [x] Telefono, direccion y horario confirmados por Oscar (2026-09-22). Pendiente: email.
-- [ ] Verificacion de registro del dominio oscarautoglass.com (confirmado por el cliente, registro sin verificar).
+- [x] Dominio correcto verificado: oscarglassshop.com (corregido 2026-09-22; ya en vivo, confirmado por Lups).
 - [ ] Google Search Console / Bing Webmaster Tools (requiere dominio publicado).
 - [ ] Reemplazar resenas placeholder por resenas reales autorizadas.
 - [ ] Fotografia real del local (hoy la Home usa imagenes generadas guardadas por Lups, no fotos reales del negocio; ver ASSET_REGISTER.md).

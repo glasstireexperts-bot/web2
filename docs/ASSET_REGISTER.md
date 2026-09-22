@@ -266,3 +266,34 @@ Collision"/"glasscollision.com" en codigo/contenido de produccion (solo
 quedan en documentacion historica de `docs/` y en `package.json`/
 `package-lock.json` como nombre interno del paquete, sin impacto en el
 sitio publicado).
+
+## Ronda 2026-09-22 (4) — Correccion de dominio real + ajuste de reclamo bilingue
+
+Lups compartio el link real del sitio ya en vivo (https://www.oscarglassshop.com/)
+al pedir que se agregara "el nombre completo" a la ficha de Google Maps.
+El dominio en el codigo hasta este punto (oscarautoglass.com) estaba mal
+anotado — Lups confirmo que oscarglassshop.com es el dominio real y que
+es el mismo proyecto de este repo, ya deployado ahi.
+
+Cambios:
+- `content/business.ts`, `lib/utils/url.ts`, `src/app/layout.tsx`:
+  dominio/`SITE_URL`/`metadataBase` corregidos a `oscarglassshop.com` en
+  todo el proyecto (afecta canonical, OG, sitemap y JSON-LD).
+- Nombre de marca ("Oscar Auto Glass") verificado exacto contra el sitio
+  real en vivo — coincide con lo que ya estaba en `content/business.ts`,
+  sin cambios ahi.
+- **Riesgo detectado y corregido**: la barra de confianza (`trustBar`)
+  afirmaba "Bilingual team: English & Espanol*" con un asterisco huerfano
+  (sin nota al pie en ningun lado) — una afirmacion mas fuerte que el
+  propio FAQ del sitio, que dice "the team is working toward full
+  bilingual phone support" (no confirmado). `business.ts` tiene
+  `spanishPhoneSupport` en `pending` desde el principio; la promesa
+  entera en el trust bar no era consistente con ese estado. Se suavizo
+  a "Working toward full bilingual support (English/Espanol)" /
+  "Trabajando hacia atencion bilingue completa (Ingles/Espanol)" en
+  ambos idiomas, igual de honesto que el FAQ, sin asterisco huerfano.
+  Esto no vino de la web real (esa web ES este mismo proyecto) — fue una
+  inconsistencia interna que se detecto al revisar el contenido contra el
+  estado real de `spanishPhoneSupport`.
+
+Verificado: `npx tsc --noEmit`, `npm run lint`, `npm run build` limpios.
