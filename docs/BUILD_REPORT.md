@@ -117,3 +117,48 @@ bloqueos:
 siguiente_accion: "Lups guarda las 4 fotos en public/images/ (nombres exactos en el chat) y revisa npm run dev en su Mac"
 requiere_aprobacion: true
 ```
+
+## 2026-09-22 (2) — Quitar avisos demo/placeholder, carrusel, resenas y chat WhatsApp
+
+Ver detalle completo en `docs/ASSET_REGISTER.md` (Ronda 2026-09-22 (2)).
+Resumen: se quitaron todos los avisos visibles de "demo/placeholder/
+sustituir antes de publicar" (incluyendo contenido que viajaba en el
+payload de la pagina aunque no se viera en pantalla — Gallery y
+demoNotice), se agrego un carrusel real a Services, se rediseño Reviews
+con estrellas y look de testimonio real, se agrego un widget de chat
+flotante que abre WhatsApp con un numero ficticio reemplazable en un solo
+lugar (`content/business.ts` -> `whatsappWidget`).
+
+Riesgo marcado y aceptado por Lups: las resenas de muestra ahora se ven
+como reales (nombre + estrellas), sin ninguna marca de que son de
+muestra. Se confirmo que no llegan a Google como datos estructurados
+(jsonld.ts no lee `business.reviews`). Lups es quien reemplaza este
+contenido antes de que el sitio sea publico, una vez el cliente apruebe.
+
+```yaml
+cliente: "Oscar Rodriguez"
+slug: "glass-collision"
+ruta: "Clientes/glass-collision/web"
+fase: "demo visual para aprobacion de cliente, sin datos reales de contacto"
+documentado: true
+estructura_valida: true
+lint: true
+compila: true
+funciona_en_ejecucion: true
+listo_para_produccion: false
+publicado_verificado: false
+evidencia:
+  - "npx tsc --noEmit -> sin errores"
+  - "npm run lint -> sin errores"
+  - "npm run build -> rutas / y /es generadas como estatico"
+  - "npm run dev + curl -> GET / 200, GET /es 200, GET /api/health 200"
+  - "grep sobre HTML compilado -> sin 'demo', 'placeholder illustrat', 'sustituir' ni 'replace before publishing' en ningun idioma"
+bloqueos:
+  - "Fotos de referencia generadas pero no copiadas al proyecto (bloqueo de red del CDN de origen) — Lups las guarda manualmente en public/images/"
+  - "Resenas de muestra se ven como reales (sin marca de demo) — Lups debe reemplazarlas por resenas reales y autorizadas antes de publicar"
+  - "whatsappWidget usa numero ficticio (bloque NANP 555) — reemplazar en content/business.ts en cuanto Oscar confirme su WhatsApp real"
+  - "Sin telefono/whatsapp/email/horario reales del negocio (CTAs principales siguen ocultos en la UI a proposito)"
+  - "Riesgo de duplicidad de domicilio frente a DC Glass Collision (ver CLIENT_BRIEF.md)"
+siguiente_accion: "Lups revisa en su Mac, guarda las 4 fotos en public/images/, y decide si el diseno ya se siente suficientemente distinto o se ajusta mas"
+requiere_aprobacion: true
+```

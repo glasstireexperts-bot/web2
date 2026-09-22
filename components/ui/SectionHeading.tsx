@@ -16,6 +16,8 @@ export function SectionHeading({
         </p>
       ) : null}
       <h2 className={`text-2xl font-bold tracking-tight sm:text-3xl ${headingColor}`}>{heading}</h2>
+      {/* Acento grafico — firma visual de Glass Collision, DC Glass Collision no lo usa */}
+      <span aria-hidden="true" className="mt-3 block h-1 w-14 rounded-full bg-[var(--gc-amber)]" />
     </div>
   )
 }

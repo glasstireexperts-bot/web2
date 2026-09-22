@@ -39,6 +39,7 @@ export interface BusinessProfile {
   legalContact: Field<string>
   phone: Field<string>
   whatsapp: Field<string>
+  whatsappWidget: Field<string>
   email: Field<string>
   address: Field<Address>
   hours: Field<string>
@@ -69,6 +70,12 @@ export interface GalleryItemCopy {
   label: string
 }
 
+export interface ReviewCopy {
+  quote: string
+  author: string
+  detail: string
+}
+
 export interface ProcessStepCopy {
   title: string
   description: string
@@ -97,7 +104,6 @@ export interface Dictionary {
     ctaPrimary: string
     ctaSecondary: string
     reviewsPendingNote: string
-    photoDisclaimer: string
   }
   trustBar: {
     heading: string
@@ -109,12 +115,6 @@ export interface Dictionary {
     intro: string
     items: ServiceCopy[]
     pendingNote: string
-  }
-  gallery: {
-    heading: string
-    intro: string
-    items: GalleryItemCopy[]
-    disclaimer: string
   }
   urgency: {
     heading: string
@@ -143,13 +143,11 @@ export interface Dictionary {
     heading: string
     intro: string
     items: GalleryItemCopy[]
-    disclaimer: string
   }
   reviews: {
     heading: string
-    disclaimer: string
-    placeholderNote: string
-    linkLabel: string
+    intro: string
+    items: ReviewCopy[]
   }
   serviceArea: {
     heading: string
@@ -179,5 +177,10 @@ export interface Dictionary {
     estimate: string
     whatsapp: string
   }
-  demoNotice: string
+  chatWidget: {
+    heading: string
+    intro: string
+    placeholder: string
+    sendLabel: string
+  }
 }

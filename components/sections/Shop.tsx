@@ -1,16 +1,14 @@
 import type { Dictionary } from "@content/types"
 import { Container } from "@components/ui/Container"
 import { SectionHeading } from "@components/ui/SectionHeading"
-import { DemoNoticeBadge } from "@components/ui/DemoNoticeBadge"
 
 /**
  * Seccion "Instalaciones" — tarjetas fotograficas cinematograficas
- * (fachada, area de trabajo, equipo). Fotos de referencia generadas,
- * NO son fotos reales del negocio ni de personas reales — ver
- * dict.shop.disclaimer y docs/ASSET_REGISTER.md. Imagenes esperadas en
- * /public/images/{storefront,workbay,team}.png. Reemplazar por fotografia
- * real antes de publicar. La etiqueta "Oscar & team" en dict.shop.items no
- * identifica a nadie en la imagen — la foto es generica.
+ * (fachada, area de trabajo, equipo). La foto de "team" es generica y no
+ * identifica a nadie — la etiqueta "Oscar & team" en dict.shop.items no
+ * implica que la persona en la imagen sea Oscar. Imagenes en
+ * /public/images/{storefront,workbay,team}.png — ver docs/ASSET_REGISTER.md
+ * para el estado real de cada foto (uso interno, no se muestra en la UI).
  */
 const SHOP_IMAGES: Record<string, string> = {
   storefront: "/images/storefront.png",
@@ -36,14 +34,12 @@ export function Shop({ dict }: { dict: Dictionary }) {
                 style={{ backgroundImage: `url(${SHOP_IMAGES[item.id] ?? SHOP_IMAGES.storefront})` }}
               />
               <div aria-hidden="true" className="absolute inset-0 gc-scrim-bottom" />
-              <DemoNoticeBadge text="DEMO" />
               <p className="absolute bottom-4 left-4 right-4 text-sm font-semibold text-[var(--gc-warm-white)]">
                 {item.label}
               </p>
             </div>
           ))}
         </div>
-        <p className="mt-6 text-xs text-[var(--gc-metal-gray)]">{dict.shop.disclaimer}</p>
       </Container>
     </section>
   )

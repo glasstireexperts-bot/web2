@@ -30,6 +30,11 @@ export const business: BusinessProfile = {
     status: "pending",
     note: "Sin numero confirmado todavia. La UI oculta el boton de WhatsApp mientras este campo siga pending.",
   },
+  whatsappWidget: {
+    value: "+1 202-555-0199",
+    status: "placeholder",
+    note: "Numero FICTICIO para el widget de chat (bloque reservado NANP 555-0100 a 555-0199, nunca asignable a una linea real, no le va a llegar a nadie). Pedido explicito de Lups (chat 2026-09-22): sin aviso visible en la UI. Reemplazar por el WhatsApp real de Oscar en cuanto lo confirme — es el UNICO lugar del codigo donde hay que cambiarlo.",
+  },
   email: {
     value: "",
     status: "pending",

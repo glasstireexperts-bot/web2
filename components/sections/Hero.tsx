@@ -9,8 +9,8 @@ import { WhatsAppButton } from "@components/ui/WhatsAppButton"
 
 /**
  * Hero cinematografico "claro + dramatico". El fondo de la SECCION usa una
- * fotografia de referencia (placeholder, ver dict.hero.photoDisclaimer) con
- * scrim lateral para legibilidad — la pagina en general se mantiene clara
+ * fotografia de referencia con scrim lateral para legibilidad — la pagina
+ * en general se mantiene clara
  * (Clean Slate); el drama vive aqui y en las bandas puntuales, no en un
  * fondo oscuro global. Imagen esperada: /public/images/hero-bg.png
  * (generada, pendiente de reemplazo por foto real — ver ASSET_REGISTER.md).
@@ -114,14 +114,6 @@ export function Hero({ dict }: { dict: Dictionary }) {
               </span>
             ) : null}
           </motion.div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-6 text-[11px] text-white/45"
-          >
-            {dict.hero.photoDisclaimer}
-          </motion.p>
         </div>
       </Container>
     </section>

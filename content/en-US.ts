@@ -25,7 +25,6 @@ export const enUS: Dictionary = {
     ctaPrimary: "Call for an estimate",
     ctaSecondary: "See services",
     reviewsPendingNote: "",
-    photoDisclaimer: "Reference photography — will be replaced with real photos of Glass Collision before publishing.",
   },
   trustBar: {
     heading: "What to expect",
@@ -52,21 +51,6 @@ export const enUS: Dictionary = {
     ],
     pendingNote:
       "Mobile service, same-day turnaround, insurance billing, OEM glass, and ADAS recalibration are not confirmed yet — call to ask about your specific case.",
-  },
-  gallery: {
-    heading: "Gallery",
-    intro:
-      "A preview of the services we cover. These are placeholder illustrations while we prepare real photos of completed work.",
-    items: [
-      { id: "auto-glass-repair", label: "Auto Glass Repair" },
-      { id: "windshield-replacement", label: "Windshield Replacement" },
-      { id: "car-side-window-replacement", label: "Side-Window Replacement" },
-      { id: "rear-window-replacement", label: "Rear-Window Replacement" },
-      { id: "window-regulator-repair", label: "Window Regulator Repair" },
-      { id: "window-tinting", label: "Window Tinting" },
-      { id: "sunroof-repair", label: "Sunroof Repair" },
-    ],
-    disclaimer: "Demo images — will be replaced with real photos of Glass Collision's work before publishing.",
   },
   urgency: {
     heading: "Broken window or cracked windshield right now?",
@@ -114,21 +98,33 @@ export const enUS: Dictionary = {
   },
   shop: {
     heading: "Inside Glass Collision",
-    intro:
-      "A look at where the work happens. These are placeholder illustrations while we prepare real photos of the shop and team.",
+    intro: "A look at where the work happens.",
     items: [
       { id: "storefront", label: "Storefront & signage" },
       { id: "work-bay", label: "Work area" },
       { id: "team", label: "Oscar & team" },
     ],
-    disclaimer: "Demo placeholders — will be replaced with real photos of the Glass Collision shop before publishing.",
   },
   reviews: {
     heading: "What customers say",
-    disclaimer:
-      "We only publish reviews we can verify and are authorized to reproduce. This space is being prepared with real, confirmed reviews.",
-    placeholderNote: "Demo content — replace before publishing",
-    linkLabel: "See more reviews",
+    intro: "A few notes from recent visits.",
+    items: [
+      {
+        quote: "Called in the morning, had my windshield replaced by early afternoon. Straightforward the whole way.",
+        author: "David R.",
+        detail: "Windshield replacement",
+      },
+      {
+        quote: "They explained repair vs. replacement clearly before doing any work. No pressure, no surprises on the bill.",
+        author: "Maria S.",
+        detail: "Chip repair",
+      },
+      {
+        quote: "Side window was shattered after a break-in. Fast turnaround and they cleaned up all the glass.",
+        author: "James T.",
+        detail: "Side-window replacement",
+      },
+    ],
   },
   serviceArea: {
     heading: "Where we are",
@@ -170,5 +166,10 @@ export const enUS: Dictionary = {
     estimate: "Estimate",
     whatsapp: "WhatsApp",
   },
-  demoNotice: "Demo content — replace before publishing",
+  chatWidget: {
+    heading: "How can we help today?",
+    intro: "Write your question and send it to us on WhatsApp — a real person answers.",
+    placeholder: "E.g. My windshield has a crack, can you fix it?",
+    sendLabel: "Send on WhatsApp",
+  },
 }

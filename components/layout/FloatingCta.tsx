@@ -21,7 +21,7 @@ export function FloatingCta({ dict }: { dict: Dictionary }) {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.6 }}
-      className="fixed bottom-6 right-6 z-30 hidden flex-col items-end gap-2 sm:flex"
+      className="fixed bottom-24 right-6 z-30 hidden flex-col items-end gap-2 sm:flex"
     >
       {whatsappReady ? (
         <WhatsAppButton

@@ -3,6 +3,7 @@ import { SiteHeader } from "@components/layout/SiteHeader"
 import { SiteFooter } from "@components/layout/SiteFooter"
 import { MobileCallBar } from "@components/layout/MobileCallBar"
 import { FloatingCta } from "@components/layout/FloatingCta"
+import { ChatWidget } from "@components/layout/ChatWidget"
 import { LocaleHtmlSync } from "@components/layout/LocaleHtmlSync"
 import { Hero } from "@components/sections/Hero"
 import { TrustBar } from "@components/sections/TrustBar"
@@ -55,6 +56,7 @@ export function HomeSections({ dict }: { dict: Dictionary }) {
       <SiteFooter dict={dict} />
       <MobileCallBar dict={dict} />
       <FloatingCta dict={dict} />
+      <ChatWidget dict={dict} />
     </>
   )
 }

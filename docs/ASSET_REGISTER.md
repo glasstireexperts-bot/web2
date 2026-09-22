@@ -135,3 +135,85 @@ lint` limpio, `npm run build` exitoso, `npm run dev` + `curl` en `/`, `/es`
 y `/api/health` devolvieron 200 con los marcadores cinematograficos
 (`gc-grain`, `gc-scrim-*`, `gc-particle`, `gc-vignette`) presentes en el
 HTML.
+
+## Ronda 2026-09-22 (2) — Quitar avisos de "demo/placeholder", carrusel, resenas y chat
+
+Pedido de Lups tras ver la primera version del rediseno cinematografico:
+seguia sintiendose parecido al anterior, y pidio quitar toda mencion visible
+de "demo/placeholder/sustituir antes de publicar" porque el mismo se
+encarga de reemplazar el contenido cuando el cliente apruebe y mande datos
+reales.
+
+**Riesgo marcado antes de ejecutar** (regla propia de Lups: marcar riesgo
+antes de recomendar cuando algo toca reputacion/entregas): quitar avisos de
+"esto es de muestra" de fotos de stock es una practica de diseno estandar
+para una demo que se le ensena al cliente. Quitarlo de las **resenas**
+(nombres + estrellas presentados como clientes reales) es un nivel de
+riesgo distinto — son testimonios inventados. Se verifico que
+`lib/seo/jsonld.ts` NUNCA lee `business.reviews` (no hay `Review` ni
+`AggregateRating` en el JSON-LD), asi que estas resenas de muestra no
+llegan a Google como datos estructurados bajo ninguna circunstancia — el
+riesgo queda acotado a que un visitante humano las vea en la pagina, no a
+que aparezcan en resultados de busqueda con estrellas. Lups conocia el
+riesgo y decidio proceder porque el mismo reemplaza el contenido antes de
+publicar con el cliente.
+
+Cambios:
+- Se quitó `DemoNoticeBadge` de todo el sitio (Hero, Shop, Reviews) y se
+  borró el componente (`components/ui/DemoNoticeBadge.tsx`) por quedar sin
+  uso.
+- Se quitaron los campos de contenido `hero.photoDisclaimer`,
+  `shop.disclaimer`, `reviews.disclaimer`, `reviews.placeholderNote`,
+  `reviews.linkLabel` y el campo global `demoNotice` (no se usaba en
+  ningun componente, pero SI viajaba en el payload serializado de la
+  pagina — se detecto revisando el HTML compilado, no solo la vista, ver
+  nota tecnica abajo).
+- Se eliminó por completo la sección `Gallery` (componente, tipo de
+  contenido y contenido en ambos idiomas) — estaba fuera del flujo desde
+  la ronda anterior pero su copy ("placeholder illustrations...") seguía
+  viajando en el HTML/JS de la página aunque no se viera en pantalla.
+- `content/types.ts` + `en-US.ts` + `es-US.ts`: `reviews` ahora es
+  `{ heading, intro, items: ReviewCopy[] }` con 3 reseñas de muestra reales
+  en tono (cita + nombre + detalle del servicio), en vez del texto
+  hardcodeado que había antes directo en el componente.
+- Nuevo componente `ChatWidget.tsx` (burbuja flotante "How can we help
+  today?" / "En que te ayudamos hoy?"): el visitante escribe, el botón abre
+  WhatsApp con el mensaje ya listo — no es un bot con respuestas
+  automáticas. Usa `business.whatsappWidget.value`, un número FICTICIO del
+  bloque reservado NANP 555-0100 a 555-0199 (nunca asignable a una línea
+  real — si alguien lo usa antes de que Lups ponga el real, el mensaje no
+  le llega a nadie, no se hace pasar por Glass Collision). Reemplazar ese
+  único valor en `content/business.ts` en cuanto Oscar confirme su
+  WhatsApp.
+- `Services.tsx` reescrito como carrusel: banda de fondo oscuro (contraste
+  con el resto de la página, que sigue clara), tarjetas alternando
+  claro/oscuro entre sí, avance automático cada 4.5s con rebote (no salto
+  brusco), flechas y puntos de navegación, se pausa al pasar el mouse.
+- `Reviews.tsx` reescrito: 5 estrellas, comilla grande decorativa, avatar
+  de inicial, tarjeta central ligeramente elevada — acomodo tipo
+  testimonio real en vez de tarjeta con borde punteado.
+- `SectionHeading.tsx`: se agregó una barra roja decorativa bajo cada
+  título — firma gráfica propia que DC Glass Collision no usa.
+- No se implementaron los divisores diagonales (clip-path) que se habían
+  considerado para diferenciar más el acomodo general — se descartó por no
+  poder verificar visualmente la geometría sin una vista renderizada, y el
+  riesgo de que se vea roto en algún ancho de pantalla no vale la pena
+  frente al resto de cambios ya logrados. Queda como posible siguiente paso
+  si Lups lo sigue sintiendo parecido.
+
+### Nota tecnica — por que "quitar un aviso del componente" no bastaba
+La primera pasada solo dejó de RENDERIZAR los avisos de demo/placeholder,
+pero el objeto de contenido completo (`dict`) se le sigue pasando entero a
+los componentes cliente (Hero, Services, ChatWidget, FloatingCta) para que
+React pueda hidratarlos en el navegador — eso significa que aunque un campo
+no se muestre en pantalla, su texto SI queda embebido en el HTML/JS que se
+manda al navegador (visible en "ver código fuente"). Se verificó esto
+descargando el HTML compilado con curl y buscando "demo"/"placeholder"
+directamente en el archivo, no solo mirando la página — así se encontraron
+`gallery.disclaimer` y `demoNotice` todavía presentes pese a no
+renderizarse. Ambos ya se eliminaron del contenido, no solo del render.
+
+Verificado: `npx tsc --noEmit`, `npm run lint`, `npm run build` limpios;
+`npm run dev` + curl en `/` y `/es` → 200; se confirmó con grep sobre el
+HTML compilado que ya no aparece "demo", "placeholder illustrat",
+"sustituir" ni "replace before publishing" en ningún idioma.

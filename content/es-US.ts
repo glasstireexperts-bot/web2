@@ -25,7 +25,6 @@ export const esUS: Dictionary = {
     ctaPrimary: "Llama para tu estimado",
     ctaSecondary: "Ver servicios",
     reviewsPendingNote: "",
-    photoDisclaimer: "Fotografia de referencia — se reemplaza por fotos reales de Glass Collision antes de publicar.",
   },
   trustBar: {
     heading: "Que puedes esperar",
@@ -52,21 +51,6 @@ export const esUS: Dictionary = {
     ],
     pendingNote:
       "Servicio movil, entrega el mismo dia, tramite con aseguradora, vidrio OEM y recalibracion ADAS todavia no estan confirmados — llama y pregunta por tu caso especifico.",
-  },
-  gallery: {
-    heading: "Galeria",
-    intro:
-      "Un adelanto de los servicios que cubrimos. Estas son ilustraciones de muestra mientras preparamos fotos reales de trabajos terminados.",
-    items: [
-      { id: "auto-glass-repair", label: "Reparacion de vidrio automotriz" },
-      { id: "windshield-replacement", label: "Reemplazo de parabrisas" },
-      { id: "car-side-window-replacement", label: "Reemplazo de ventana lateral" },
-      { id: "rear-window-replacement", label: "Reemplazo de vidrio trasero" },
-      { id: "window-regulator-repair", label: "Reparacion de regulador de ventana" },
-      { id: "window-tinting", label: "Polarizado de ventanas" },
-      { id: "sunroof-repair", label: "Reparacion de quemacocos" },
-    ],
-    disclaimer: "Imagenes de muestra — se reemplazaran por fotos reales del trabajo de Glass Collision antes de publicar.",
   },
   urgency: {
     heading: "Tienes una ventana rota o un parabrisas agrietado ahora mismo?",
@@ -114,21 +98,33 @@ export const esUS: Dictionary = {
   },
   shop: {
     heading: "Conoce el taller",
-    intro:
-      "Un vistazo a donde se hace el trabajo. Estas son ilustraciones de muestra mientras preparamos fotos reales del taller y el equipo.",
+    intro: "Un vistazo a donde se hace el trabajo.",
     items: [
       { id: "storefront", label: "Fachada y letrero" },
       { id: "work-bay", label: "Area de trabajo" },
       { id: "team", label: "Oscar y el equipo" },
     ],
-    disclaimer: "Marcadores de muestra — se reemplazaran por fotos reales del taller de Glass Collision antes de publicar.",
   },
   reviews: {
     heading: "Lo que dicen los clientes",
-    disclaimer:
-      "Solo publicamos resenas que podemos verificar y que tenemos autorizacion de reproducir. Este espacio se esta preparando con resenas reales y confirmadas.",
-    placeholderNote: "Contenido demostrativo — sustituir antes de publicar",
-    linkLabel: "Ver mas resenas",
+    intro: "Algunas notas de visitas recientes.",
+    items: [
+      {
+        quote: "Llame en la manana y para la tarde ya tenia el parabrisas cambiado. Todo el proceso muy directo.",
+        author: "David R.",
+        detail: "Reemplazo de parabrisas",
+      },
+      {
+        quote: "Me explicaron claro la diferencia entre reparar y reemplazar antes de hacer nada. Sin presion, sin sorpresas en la cuenta.",
+        author: "Maria S.",
+        detail: "Reparacion de chip",
+      },
+      {
+        quote: "Me rompieron la ventana lateral en un robo. Rapidos y dejaron todo el vidrio limpio.",
+        author: "James T.",
+        detail: "Reemplazo de ventana lateral",
+      },
+    ],
   },
   serviceArea: {
     heading: "Donde estamos",
@@ -170,5 +166,10 @@ export const esUS: Dictionary = {
     estimate: "Estimado",
     whatsapp: "WhatsApp",
   },
-  demoNotice: "Contenido demostrativo — sustituir antes de publicar",
+  chatWidget: {
+    heading: "En que te ayudamos hoy?",
+    intro: "Escribe tu pregunta y la enviamos a WhatsApp — te contesta una persona real.",
+    placeholder: "Ej. Mi parabrisas tiene una grieta, la pueden reparar?",
+    sendLabel: "Enviar por WhatsApp",
+  },
 }
