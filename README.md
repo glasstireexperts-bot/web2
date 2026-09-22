@@ -1,7 +1,7 @@
 # MAPS 2.0 — glass-collision
 
 Proyecto web independiente dentro de Google mas Maps / Somos Lazaro.
-Cliente: Oscar Rodriguez — Marca: Oscar Auto Glass (segunda ubicacion real,
+Cliente: Oscar Rodriguez — Marca: Oscar Glass Shop (segunda ubicacion real,
 misma operacion que DC Glass Collision — ver docs/CLIENT_BRIEF.md).
 
 Este proyecto se creo copiando la arquitectura de `../glass-tire-experts/web`

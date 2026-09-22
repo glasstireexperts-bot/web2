@@ -1,6 +1,6 @@
 import type { BusinessProfile } from "./types"
 
-// Fuente unica de NAP y datos de negocio de Oscar Auto Glass (antes "Glass
+// Fuente unica de NAP y datos de negocio de Oscar Glass Shop (antes "Glass
 // Collision") — SEGUNDA UBICACION real del mismo operador de DC Glass
 // Collision (Oscar Rodriguez). No inventar datos que no esten aqui.
 //
@@ -18,9 +18,9 @@ import type { BusinessProfile } from "./types"
 
 export const business: BusinessProfile = {
   brand: {
-    value: "Oscar Auto Glass",
+    value: "Oscar Glass Shop",
     status: "confirmed",
-    note: "Nombre de marca indicado por Lups (chat 2026-09-22): 'Oscar Auto Glass', confirmado exacto por Lups 2026-09-22 (coincide con como aparece publicado en oscarglassshop.com, el sitio real ya en vivo). El dominio correcto es oscarglassshop.com (corregido 2026-09-22; antes se habia anotado por error oscarautoglass.com, que no es el dominio real).",
+    note: "Nombre completo confirmado explicitamente por Lups (chat 2026-09-22, segunda correccion): 'Oscar Glass Shop', coincide con el dominio real oscarglassshop.com. Corrige el valor anterior 'Oscar Auto Glass', que fue una capitalizacion/nombre propio inventado por el asistente a partir del dominio viejo mal anotado (oscarautoglass.com) y NUNCA fue confirmado por Lups como el nombre exacto.",
   },
   legalContact: {
     value: "Oscar Rodriguez",

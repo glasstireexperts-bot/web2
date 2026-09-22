@@ -5,7 +5,7 @@ export const esUS: Dictionary = {
   htmlLang: "es-US",
   path: "/es",
   meta: {
-    title: "Reparacion de Vidrio Automotriz en Washington DC | Oscar Auto Glass",
+    title: "Reparacion de Vidrio Automotriz en Washington DC | Oscar Glass Shop",
     description:
       "Reparacion de vidrio automotriz y reemplazo de parabrisas en Washington, DC. Respuestas claras, un proceso directo y una ruta clara para volver al camino. Llama para tu estimado.",
   },
@@ -77,7 +77,7 @@ export const esUS: Dictionary = {
     ctaLabel: "Empieza con una llamada",
   },
   differentiators: {
-    heading: "Por que los conductores de Washington, DC llaman a Oscar Auto Glass",
+    heading: "Por que los conductores de Washington, DC llaman a Oscar Glass Shop",
     items: [
       "Contacto directo — hablas con quienes hacen el trabajo",
       "Presencia local en Washington, DC",
@@ -137,7 +137,7 @@ export const esUS: Dictionary = {
     items: [
       { question: "Que informacion del vehiculo necesitan?", answer: "Anio, marca, modelo y que pieza de vidrio esta afectada. Con eso es suficiente para empezar a hablar de tus opciones." },
       { question: "Reparan chips o reemplazan el parabrisas completo?", answer: "Depende del tamano, la profundidad y la ubicacion del dano. Te diremos con honestidad que opcion aplica a tu parabrisas." },
-      { question: "Ofrecen servicio movil?", answer: "Esto todavia no esta confirmado para Oscar Auto Glass — llama y te decimos que esta disponible para tu ubicacion." },
+      { question: "Ofrecen servicio movil?", answer: "Esto todavia no esta confirmado para Oscar Glass Shop — llama y te decimos que esta disponible para tu ubicacion." },
       { question: "Pueden reemplazar ventanas laterales y traseras?", answer: "Si, el reemplazo de ventanas laterales y traseras es parte de nuestros servicios principales." },
       { question: "Trabajan con seguros?", answer: "El tramite con aseguradoras todavia no esta confirmado — llama y te explicamos que podemos apoyar por ahora." },
       { question: "Ofrecen atencion en espanol?", answer: "El equipo esta trabajando hacia atencion telefonica bilingue completa — llama y pregunta, haremos lo posible por atenderte en espanol." },

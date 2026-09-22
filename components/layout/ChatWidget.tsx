@@ -9,7 +9,7 @@ import { toWhatsAppHref } from "@lib/contact/whatsapp"
 /**
  * Burbuja de chat -> WhatsApp. No es un chatbot con respuestas automaticas:
  * el visitante escribe, el boton abre WhatsApp con el mensaje ya listo para
- * enviar al numero real de Oscar Auto Glass (una persona contesta del otro
+ * enviar al numero real de Oscar Glass Shop (una persona contesta del otro
  * lado, dentro de horario de operacion — no es soporte 24/7 staffed, ver
  * dict.chatWidget.intro y content/business.ts -> hours.note).
  * Usa business.whatsapp directamente (numero real, confirmado 2026-09-22);

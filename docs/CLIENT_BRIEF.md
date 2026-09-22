@@ -2,8 +2,10 @@
 
 ## Identidad
 - Cliente: Oscar Rodriguez
-- Marca: Oscar Auto Glass (confirmado 2026-09-22, reemplaza el nombre
-  inferido "Glass Collision")
+- Marca: Oscar Glass Shop (confirmado 2026-09-22, segunda correccion —
+  reemplaza "Oscar Auto Glass", que fue una capitalizacion inventada por
+  el asistente sin confirmar; el nombre completo real coincide con el
+  dominio oscarglassshop.com)
 - Relacion con DC Glass Collision: segunda ubicacion real del mismo operador,
   mismo giro (auto glass). El nombre de Oscar ya es publico (forma parte de
   la marca); el de Maria, su hermana, que atiende de cara al publico,
@@ -19,7 +21,7 @@
   compartido en chat)
 
 ## NAP (ver content/business.ts para estado campo por campo)
-- Nombre: Oscar Auto Glass — estado: confirmado (Lups, 2026-09-22)
+- Nombre: Oscar Glass Shop — estado: confirmado (Lups, 2026-09-22, segunda correccion)
 - Direccion: 4222 14th St NW, Washington, DC 20011 — estado: confirmado (Lups, 2026-09-22; reemplaza la direccion anterior 4454 Nannie Helen Burroughs Ave NE)
 - Telefono: +1 202-845-1312 — estado: confirmado (Lups, 2026-09-22)
 - Email: sin definir — estado: pending

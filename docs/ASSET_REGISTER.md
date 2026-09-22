@@ -297,3 +297,23 @@ Cambios:
   estado real de `spanishPhoneSupport`.
 
 Verificado: `npx tsc --noEmit`, `npm run lint`, `npm run build` limpios.
+
+## Ronda 2026-09-22 (5) — Correccion de nombre completo: "Oscar Glass Shop"
+
+Lups aclaro que la ronda anterior no cambio el nombre que el pedia: solo
+queria agregar "Shop" al nombre para la ficha de Maps. El nombre completo
+correcto, confirmado explicitamente, es **"Oscar Glass Shop"** — no
+"Oscar Auto Glass" (que fue una capitalizacion/nombre propio que el
+asistente invento antes a partir del dominio viejo mal anotado,
+oscarautoglass.com, y nunca fue confirmado por Lups). "Oscar Glass Shop"
+coincide exactamente con el dominio real: oscarglassshop.com.
+
+Se corrigio en `content/business.ts` (brand + nota explicativa),
+`content/en-US.ts`, `content/es-US.ts` (title, headings, FAQ) y
+`components/layout/ChatWidget.tsx` (comentario). Tambien en README.md y
+docs/CLIENT_BRIEF.md. Se confirma ademas que esta correccion se aplico
+unicamente en este proyecto (`Clientes/glass-collision/web`, remoto
+`web2`) — no se toco `glass-tire-experts` (DC Glass Collision, `web1`) en
+ningun momento de esta sesion.
+
+Verificado: `npx tsc --noEmit`, `npm run lint`, `npm run build` limpios.
